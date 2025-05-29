@@ -8,8 +8,8 @@
     let
 
       # git revision to use (for version and git pull
-      gitRevision = "llvmorg-17-init";
-      # gitRevision = "603c286334b07f568d39f6706c848f576914f323";
+      # gitRevision = "llvmorg-17-init";
+      gitRevision = "8885b5c0626065274cb8f8a634d45779a0f6ff2b";
 
       # to work with older version of flakes
       lastModifiedDate = self.lastModifiedDate or self.lastModified or "19700101";
