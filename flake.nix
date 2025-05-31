@@ -68,7 +68,7 @@
             # Debug for debug builds
             "-DCMAKE_BUILD_TYPE=Release"
             # from the original LLVM expr
-            "-DLLVM_LINK_LLVM_DYLIB=ON"
+            # "-DLLVM_LINK_LLVM_DYLIB=ON"
             # inst will be our installation prefix
             #"-DCMAKE_INSTALL_PREFIX=../inst"
             # "-DLLVM_INSTALL_TOOLCHAIN_ONLY=ON"
