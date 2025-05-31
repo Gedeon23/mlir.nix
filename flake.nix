@@ -110,6 +110,7 @@
             "-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=SPIRV" 
             "-DLLVM_CCACHE_BUILD=ON"
 
+            "-DPython3_EXECUTABLE=${python3}/bin/python3"
           ];
 
           # TODO(feliix42): Fix this, as it requires the python package `lit`
