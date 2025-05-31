@@ -58,7 +58,10 @@
             llvmPackages_16.bintools
           ];
 
-          buildInputs = [ libxml2 ];
+          buildInputs = [
+            libxml2
+            python3
+          ];
 
 
           cmakeFlags = [
