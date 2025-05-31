@@ -52,6 +52,7 @@
             cmake
             ncurses
             zlib
+            ccache
             llvmPackages_16.llvm
             llvmPackages_16.clang
             llvmPackages_16.bintools
