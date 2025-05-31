@@ -74,13 +74,12 @@
             # install tools like FileCheck
             "-DLLVM_INSTALL_UTILS=ON"
             # change this to enable the projects you need
-            "-DLLVM_ENABLE_PROJECTS=mlir"
             # "-DLLVM_BUILD_EXAMPLES=ON"
             # this makes llvm only to produce code for the current platform, this saves CPU time, change it to what you need
-            "-DLLVM_TARGETS_TO_BUILD=X86"
+            # "-DLLVM_TARGETS_TO_BUILD=X86"
 #            -DLLVM_TARGETS_TO_BUILD="X86;NVPTX;AMDGPU" \
             # NOTE(feliix42): THIS IS ABI BREAKING!!
-            "-DLLVM_ENABLE_ASSERTIONS=ON"
+            # "-DLLVM_ENABLE_ASSERTIONS=ON"
             # Using clang and lld speeds up the build, we recomment adding:
             "-DCMAKE_C_COMPILER=clang"
             "-DCMAKE_CXX_COMPILER=clang++"
@@ -92,6 +91,21 @@
             # file and doesn't link zlib as well.
             # https://github.com/ClangBuiltLinux/tc-build/issues/150#issuecomment-845418812
             #"-DLLVM_ENABLE_LIBXML2=OFF"
+
+            # NOTE(Gedeon23): Cmake options taken from tud-ccc/Cinnamon
+            "-Wno-dev" 
+            "-DLLVM_ENABLE_PROJECTS=mlir;llvm;clang" 
+            "-DLLVM_TARGETS_TO_BUILD=host"
+            "-DLLVM_ENABLE_ASSERTIONS=ON" 
+            "-DMLIR_ENABLE_BINDINGS_PYTHON=ON" 
+            "-DCMAKE_BUILD_TYPE=Release" 
+            "-DBUILD_SHARED_LIBS=ON" 
+            "-DLLVM_INCLUDE_TESTS=OFF" 
+            "-DLLVM_INCLUDE_BENCHMARKS=OFF" 
+            "-DLLVM_OPTIMIZED_TABLEGEN=ON" 
+            "-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=SPIRV" 
+            "-DLLVM_CCACHE_BUILD=ON"
+
           ];
 
           # TODO(feliix42): Fix this, as it requires the python package `lit`
